@@ -33,6 +33,10 @@ static  func  getLocalData() -> [Recipe] {
               // Add unique IDs
               for r in recipeData{
                   r.id = UUID()
+                  // Add unique IDs recipe  ıngredients
+                  for i in r.ingredients {
+                      i.id = UUID()
+                  }
               }
            
               return recipeData

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RecipeDetailView: View {
     
-    var recipeDetails:Recipe
+    var recipeDetails: Recipe
     
     var body: some View {
        
@@ -25,10 +25,10 @@ struct RecipeDetailView: View {
                     Text("Ingredients")
                         .font(.headline)
                         .padding([.bottom,.top], 5)
-                    ForEach(recipeDetails.ingredients, id: \.self) { ingredient in
-                        Text("• " + ingredient)
+                    ForEach(recipeDetails.ingredients) { item  in
+                        Text("• " + item.name)
                         
-                    }
+                    
                 }.padding(.horizontal)
                // MARK: Diveder
                 Divider()
@@ -46,6 +46,7 @@ struct RecipeDetailView: View {
         }
         }.navigationBarTitle(recipeDetails.name)
  }
+}
 }
 struct RecipeDetailView_Previews: PreviewProvider {
     static var previews: some View {
