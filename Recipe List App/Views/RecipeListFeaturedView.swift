@@ -10,6 +10,7 @@ import SwiftUI
 struct RecipeListFeaturedView: View {
     
     @EnvironmentObject var model:RecipeModel
+    @State var isDetailViewShowing = false
     var body: some View {
         
         VStack(alignment:.leading,spacing: 10) {
@@ -22,7 +23,12 @@ struct RecipeListFeaturedView: View {
             TabView {
                 ForEach(0..<model.recipes.count) { index in
                     if model.recipes[index].featured {
-                        ZStack {
+                       // card view buttun
+                        Button {
+                            // show the recipe detail sheet
+                            self.isDetailViewShowing = true
+                        } label: {
+                            ZStack {
                             Rectangle()
                                 .foregroundColor(.white)
                             VStack(spacing:0) {
@@ -34,11 +40,18 @@ struct RecipeListFeaturedView: View {
                                 Text(model.recipes[index].name)
                                     .padding(5)
                             }
-                        }.frame(width: geo.size.width - 40, height: geo.size.height - 100, alignment: .center)
+                        }
+                        }.sheet(isPresented : $isDetailViewShowing ) {
+                            // Show Recipe Detail View
+                            RecipeDetailView(recipeDetails : model.recipes[index])
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        .frame(width: geo.size.width - 40, height: geo.size.height - 100, alignment: .center)
                             .cornerRadius(10)
                             .shadow(color:Color(.sRGB, red: 0, green: 0, blue: 0, opacity: 0.6) ,radius: 10, x: -5, y: 5 )
-                    }
-                    
+                        
+                        }
+        
                 }
                 
             }
