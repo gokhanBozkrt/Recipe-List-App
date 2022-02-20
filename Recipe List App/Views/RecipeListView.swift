@@ -14,7 +14,8 @@ struct  RecipeListView: View {
     
     var body: some View {
         NavigationView {
-            VStack(alignment:.leading) {
+            VStack(alignment:.leading)
+            {
                 Text("All Recipes")
                     .bold()
                     .font(.largeTitle)
