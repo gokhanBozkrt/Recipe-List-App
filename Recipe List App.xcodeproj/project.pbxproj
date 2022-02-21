@@ -50,6 +50,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F71245BA27C3A2E90064D693 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		F7D5AC9627B417A300B73222 = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +83,7 @@
 				F7D5ACB427B4188700B73222 /* Services */,
 				F7E292AA27C28E67009B6DFE /* Utilities */,
 				F7D5ACB327B4188000B73222 /* Data */,
+				F71245BA27C3A2E90064D693 /* Fonts */,
 				F7D5ACA627B417A500B73222 /* Assets.xcassets */,
 				F7D5ACA827B417A500B73222 /* Preview Content */,
 			);
